@@ -82,7 +82,7 @@ module Faye
         @connection_message['advice'] = {'timeout' => 0}
       end
 
-      @promise.succeed(request(@outbox))
+      @promise.succeed(request(@outbox)) if @promise
 
       @connection_message = nil
       @outbox = []
